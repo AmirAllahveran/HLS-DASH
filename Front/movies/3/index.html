@@ -1,0 +1,299 @@
+<!------ Include the above in your HEAD tag ---------->
+
+
+<!DOCTYPE html>
+<html class=''>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta name="robots" content="noindex">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style class="cp-pen-styles">
+        body {
+            height: 100%;
+            width: 100%;
+            background: #e9e9e9;
+            font-family: 'Arimo', Arial, sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            color: #010b26;
+        }
+
+        * {
+            -webkit-transition: 300ms;
+            transition: 300ms;
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        p {
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a:hover {
+            color: #6ABCEA;
+        }
+
+        .container {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            max-width: 100%;
+            margin-top: 2vh;
+            margin-left: auto;
+            margin-right: auto;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .movie-card {
+            background: #ffffff;
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 330px;
+            margin: 2em;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .movie-trailer {
+            background: #ffffff;
+            box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 650px;
+            margin: 2em;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .movie-header {
+            padding: 0;
+            margin: 0;
+            height: 367px;
+            width: 100%;
+            display: block;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .movie-trailer-header {
+            padding: 0;
+            margin: 0;
+            height: 367px;
+            width: 100%;
+            display: block;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+
+
+        .header-icon-container {
+            position: relative;
+        }
+
+        .header-icon {
+            width: 100%;
+            height: 367px;
+            line-height: 367px;
+            text-align: center;
+            vertical-align: middle;
+            margin: 0 auto;
+            color: #ffffff;
+            font-size: 54px;
+            text-shadow: 0px 0px 20px #6abcea, 0px 5px 20px #6ABCEA;
+            opacity: .85;
+        }
+
+        .header-icon:hover {
+            background: rgba(0, 0, 0, 0.15);
+            font-size: 74px;
+            text-shadow: 0px 0px 20px #6abcea, 0px 5px 30px #6ABCEA;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            opacity: 1;
+        }
+
+        .movie-card:hover {
+            -webkit-transform: scale(1.03);
+            transform: scale(1.03);
+            box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .movie-content {
+            padding: 18px 18px 24px 18px;
+            margin: 0;
+        }
+
+        .movie-content-header,
+        .movie-info {
+            display: table;
+            width: 100%;
+        }
+
+        .movie-title {
+            font-size: 24px;
+            margin: 0;
+            display: table-cell;
+        }
+
+        .imax-logo {
+            width: 50px;
+            height: 15px;
+            background: url("images/IMDB_Logo_2016.svg") no-repeat;
+            background-size: contain;
+            display: table-cell;
+            float: right;
+            position: relative;
+            margin-top: 5px;
+        }
+
+        .movie-info {
+            margin-top: 1em;
+        }
+
+        .info-section {
+            display: table-cell;
+            text-transform: uppercase;
+            text-align: center;
+        }
+
+        .info-section:first-of-type {
+            text-align: left;
+        }
+
+        .info-section:last-of-type {
+            text-align: right;
+        }
+
+        .info-section label {
+            display: block;
+            color: rgba(0, 0, 0, 0.5);
+            margin-bottom: .5em;
+            font-size: 9px;
+        }
+
+        .info-section span {
+            font-weight: 700;
+            font-size: 11px;
+        }
+
+        @media screen and (max-width: 500px) {
+            .movie-card {
+                width: 95%;
+                max-width: 95%;
+                margin: 1em;
+                display: block;
+            }
+
+            .container {
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        video {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+    <div class="container" id="movie">
+    </div>
+    <script>
+
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "/api/movies/" + window.location.pathname.split('/')[2]);
+        xhttp.send();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText);
+                var html = '';
+                const obj = JSON.parse(this.responseText);
+                console.log(obj);
+                html += '    <div class="movie-card">';
+                html += '        <div class="movie-header">';
+                html += '            <img class="header-icon-container header-icon" src="' + obj['poster_path'] + '">';
+                html += '        </div>';
+                html += '        <div class="movie-content">';
+                html += '            <div class="movie-content-header">';
+                html += '                    <h3 class="movie-title">' + obj['name'] + '</h3>';
+                html += '            </div>';
+                html += '            <div class="movie-info">';
+                html += '                <div class="info-section">';
+                html += '                    <label>IMDb Rating</label>';
+                html += '                    <span>' + obj['score'] + '</span>';
+                html += '                </div>';
+                html += '                <div class="info-section">';
+                html += '                    <label>Director</label>';
+                html += '                    <span>' + obj['director_name'] + '</span>';
+                html += '                </div>';
+                html += '            </div>';
+                html += '        </div>';
+                html += '    </div>';
+                html += '    <div class="movie-trailer">';
+                html += '        <div class="movie-header">';
+                html += '            <video class="movie-trailer-header" id="video" height="367" controls autoplay>';
+                html += '            </video>';
+                html += '        </div>';
+                html += '        <div class="movie-content">';
+                html += '            <div class="movie-content-header">';
+                html += '                <p class="movie-definition">' + obj['definition'] + '</p>';
+                html += '            </div>';
+                html += '        </div>';
+                html += '    </div>';
+                document.getElementById("movie").innerHTML = html;
+                var video = document.getElementById('video');
+            //    var videoSrc = 'https://mm-dash-amir.arvanvod.com/WzOgxq0v8l/zLx08a4BA7/h_,144_200,240_400,360_800,480_1500,k.mp4.list/master.m3u8';
+                var videoSrc = obj['hls_url'];
+                if (Hls.isSupported()) {
+
+                    var hls = new Hls();
+                    hls.loadSource(videoSrc);
+                    hls.attachMedia(video);
+                }
+                else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                    video.src = videoSrc;
+                }
+            }
+        };
+
+
+    </script>
+</body>
+
+</html>
